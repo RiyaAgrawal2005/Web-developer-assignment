@@ -1,48 +1,3 @@
-<!-- <?php
-// require 'db.php';
-// $error = "";
-
-// if ($_POST) {
-//     if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-//         $error = "Invalid email format";
-//     } else {
-//         $stmt = $conn->prepare(
-//             "INSERT INTO contacts (name,email,phone) VALUES (?,?,?)"
-//         );
-//         if (!$stmt->execute([
-//             $_POST['name'],
-//             $_POST['email'],
-//             $_POST['phone']
-//         ])) {
-//             $error = "Email already exists";
-//         } else {
-//             header("Location: index.php");
-//         }
-//     }
-// }
-// ?>
-
-<form method="post">
-<h3>Add Contact</h3>
-<p style="color:red"><?= $error ?></p>
-<input name="name" required placeholder="Name">
-<input name="email" required placeholder="Email">
-<input name="phone" required placeholder="Phone">
-<button>Add</button>
-</form> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 require 'db.php';
 $error = "";
@@ -85,10 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php endif; ?>
 
 <h3>Add Contact</h3>
-<!-- <p style="color:red"><?= $error ?></p> -->
 <input name="name" required placeholder="Name">
 <input name="email" required placeholder="Email">
-<!-- <input name="phone" required placeholder="Phone"> -->
+
 <input type="text" name="phone" id="phone" placeholder="Phone (10 digits)" required>
 
 <button>Add</button>
@@ -98,3 +52,4 @@ document.getElementById("phone").addEventListener("input", function () {
     this.value = this.value.replace(/[^0-9]/g, '');
 });
 </script>
+
